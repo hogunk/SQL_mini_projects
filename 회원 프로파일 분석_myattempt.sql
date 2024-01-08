@@ -18,24 +18,24 @@ SELECT A.*,
     LEFT JOIN (SELECT DISTINCT mem_no FROM SALES) AS B -- 중복 없는 회원 테이블과 판매 테이블의 결합
 		ON A.mem_no = B.mem_no;
         
-SELECT * FROM customer_profile;
+SELECT * FROM CUSTOMER_PROFILE;
 
 -- 분석 보고서에 필요한 데이터 추출
 -- 1. 가입년월별 회원수
-SELECT 가입년월, COUNT(mem_no) FROM customer_profile GROUP BY 가입년월;
+SELECT 가입년월, COUNT(mem_no) FROM CUSTOMER_PROFILE GROUP BY 가입년월;
 
 -- 2. 성별 평균 연령, 성별 및 연령대별 회원수
 SELECT gender AS 성별, AVG(나이) AS 평균연령
-	FROM customer_profile
+	FROM CUSTOMER_PROFILE
 		GROUP BY gender;
         
 SELECT gender AS 성별, 연령대, COUNT(mem_no)
-	FROM customer_profile
+	FROM CUSTOMER_PROFILE
 		GROUP BY gender, 연령대
 			ORDER BY gender, 연령대;
             
 -- 3. 성별 및 연령대별 회원수 + 구매여부
 SELECT gender AS 성별, 연령대, 구매여부, COUNT(mem_no) AS 회원수
-	FROM customer_profile
+	FROM CUSTOMER_PROFILE
 		GROUP BY gender, 연령대, 구매여부
 			ORDER BY 구매여부, gender, 연령대;
