@@ -1,5 +1,3 @@
-SQL analysis projects under SQL for elementary data analysis course available on Boostcourse.
-
 부스트코스에 열려 있는 '기초 데이터 분석을 위한 핵심 SQL'의 SQL 데이터 분석 프로젝트 모음입니다.
 각 부분별 엑셀파일 형태의 분석보고서가 결과물로 있습니다.
 모든 분석은 제공되는 Customer, Product, Sales 파일로 이루어진 practice 데이터베이스를 활용해서 진행됩니다.
